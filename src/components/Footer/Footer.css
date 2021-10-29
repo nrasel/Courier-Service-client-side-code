@@ -1,0 +1,103 @@
+/* footer top */
+.medilab-info h3{
+    color: #2c4964;
+}
+.medilab-info p{
+    font-size: 14px;
+    line-height: 24px;
+    color: #777777;
+}
+.useful-link h4{
+    font-size: 16px;
+    font-weight: bold;
+    color: #444444;
+    position: relative;
+    padding-bottom: 12px;
+    /* text-align: start; */
+}
+.useful-link a{
+    text-decoration: none;
+    color: #777777;
+    transition: 0.3s;
+    display: inline-block;
+    line-height: 2;
+    font-size: 14px;
+    /* text-align: start; */
+}
+.useful-link a:hover{
+    color: #93b3d1;
+}
+.specialist-info{
+    font-size: 16px;
+    color: #444444;
+    padding-bottom: 12px;
+}
+.specialist-form{
+    margin-top: 30px;
+    background: #fff;
+    padding: 6px 10px;
+    position: relative;
+    border-radius: 50px;
+    text-align: left;
+    border: 1px solid #bfdcf7;
+}
+.specialist-email{
+    border: none;
+}
+.subscribe-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border: 0;
+    font-size: 16px;
+    padding: 0 20px;
+    background: #1977cc;
+    color: #fff;
+    transition: 0.3s;
+    border-radius: 50px;
+}
+
+
+
+/* bottom footer */
+.footer{
+    background-color: #f0f7fd;
+}
+.flex-End{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+ .footer-social-icon a{
+    font-size: 18px;
+    color: #fff;
+    line-height: 1;
+    padding: 8px 0;
+    margin-right: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    text-decoration: none;
+    margin: 0 6px;
+}
+.icon-align{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.footer-social-icon i{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #1977cc;
+    text-align: center;
+    transition: 0.4s;
+}
+.footer-social-icon i:hover{
+    background: #1c84e3;
+    color: #fff;
+    text-decoration: none;
+}

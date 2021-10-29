@@ -1,0 +1,12 @@
+.form-control:focus{
+    border-color: #1977cc;
+    box-shadow: none;
+    border-radius: 0;
+}
+.border-radius-change{
+    border-radius: 0;
+}
+.box-shadow{
+    box-shadow: 0px 2px 15px rgb(44 73 100 / 20%);
+    border-radius: 20px;
+}

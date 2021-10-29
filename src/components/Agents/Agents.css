@@ -1,0 +1,10 @@
+.agent-img{
+    width: 250px;
+    height: 220px;
+    border-radius: 20px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.agent-img:hover{
+    transform: scale(1.1);
+}
