@@ -5,6 +5,7 @@ import './Header.css'
 
 const Header = () => {
     const { user, logOut } = useAuth()
+    console.log(user.email);
     return (
         <div>
             <section>
@@ -28,26 +29,27 @@ const Header = () => {
                                     <li className="nav-item">
                                         <NavLink className="nav-link" to="/services">Services</NavLink>
                                     </li>
-                                    <li className="nav-item">
-                                        <NavLink className="nav-link" to="/booking">Booking</NavLink>
-                                    </li>
-                                    <li className="nav-item">
+
+                                    {user.email && <li className="nav-item">
                                         <NavLink className="nav-link" to="/myOrders">My Orders</NavLink>
                                     </li>
-                                    <li className="nav-item">
+                                    }
+                                    {user.email && <li className="nav-item">
                                         <NavLink className="nav-link" to="/manageOrders">Manage Orders</NavLink>
                                     </li>
+                                    }
                                     <li className="nav-item">
                                         <span className="nav-link">{user.displayName} </span>
                                     </li>
-                                    {user?.email ?
+                                    {user.email ?
                                         <li className="nav-item">
                                             <button onClick={logOut} className="log-out">Log Out</button>
                                         </li>
                                         :
                                         <li className="nav-item">
                                             <NavLink className="nav-link" to="/login">Login</NavLink>
-                                        </li>}
+                                        </li>
+                                    }
                                 </ul>
                             </div>
                         </div>
@@ -60,15 +62,18 @@ const Header = () => {
                                 <li className="nav-item">
                                     <NavLink className="nav-link" to="/services">Services</NavLink>
                                 </li>
-                                <li className="nav-item">
-                                    <NavLink className="nav-link" to="/booking">Booking</NavLink>
-                                </li>
-                                <li className="nav-item">
+
+                                {user.email && <li className="nav-item">
                                     <NavLink className="nav-link" to="/myOrders">My Orders</NavLink>
                                 </li>
-                                <li className="nav-item">
+
+                                }
+
+                                {user.email && <li className="nav-item">
                                     <NavLink className="nav-link" to="/manageOrders">Manage Orders</NavLink>
                                 </li>
+
+                                }
                                 <li className="nav-item">
                                     <span className="nav-link">{user.displayName} </span>
                                 </li>

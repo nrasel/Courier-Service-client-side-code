@@ -7,6 +7,9 @@ import AuthProvider from './context/AuthProvider';
 import NotFound from './components/NotFound/NotFound';
 import Footer from './components/Footer/Footer';
 import OrderPlace from './components/OrderPlace/OrderPlace';
+import ManageOrders from './components/ManageOrders/ManageOrders';
+import MyOrders from './components/MyOrders/MyOrders';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -21,9 +24,15 @@ function App() {
             <Route exact path="/login">
               <Login />
             </Route>
-            <Route exact path="/orderPlace">
+            <PrivateRoute exact path="/manageOrders">
+              <ManageOrders />
+            </PrivateRoute>
+            <PrivateRoute exact path="/myOrders">
+              <MyOrders />
+            </PrivateRoute>
+            <PrivateRoute exact path="/orderPlace/:id">
               <OrderPlace />
-            </Route>
+            </PrivateRoute>
             <Route exact path="/">
               <Home />
             </Route>

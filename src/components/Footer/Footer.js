@@ -15,7 +15,7 @@ const Footer = () => {
                                     <span> A108 Green Road</span> <br />
                                     <span>Dhaka, NY 535022</span> <br />
                                     <span>Bangladesh</span><br />
-                                    <span><strong>Phone: </strong>+1 5589 55488 55</span><br />
+                                    <span><strong>Phone: </strong>+1 5589 55488 65</span><br />
                                     <span><strong>Email:</strong> rnaimur313@gmail.com</span>
                                 </p>
                             </div>
