@@ -38,6 +38,10 @@ const Header = () => {
                                         <NavLink className="nav-link" to="/manageOrders">Manage Orders</NavLink>
                                     </li>
                                     }
+                                    {user.email && <li className="nav-item">
+                                        <NavLink className="nav-link" to="/addService">Add Service</NavLink>
+                                    </li>
+                                    }
                                     <li className="nav-item">
                                         <span className="nav-link">{user.displayName} </span>
                                     </li>
@@ -72,7 +76,10 @@ const Header = () => {
                                 {user.email && <li className="nav-item">
                                     <NavLink className="nav-link" to="/manageOrders">Manage Orders</NavLink>
                                 </li>
-
+                                }
+                                {user.email && <li className="nav-item">
+                                    <NavLink className="nav-link" to="/addService">Add Service</NavLink>
+                                </li>
                                 }
                                 <li className="nav-item">
                                     <span className="nav-link">{user.displayName} </span>

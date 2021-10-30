@@ -17,6 +17,8 @@ const OrderPlace = () => {
             .then(data => setServiceDetails(data))
     }, [])
 
+    console.log(singleServiceDetails);
+
     useEffect(() => {
         const foundService = serviceDetails.find(service => service._id === id)
         setsingleServiceDetails(foundService)
@@ -38,33 +40,37 @@ const OrderPlace = () => {
 
     };
     return (
-        <div className="container">
+        <div className="container box-shadow py-5">
             <div className="row row-cols-1 row-cols-md-2 g-4 m-auto mt-5 pt-5">
                 <div >
-                    <div className="service-box m-auto h-100">
+                    <div className="service-box m-auto w-75 h-100">
                         <div className="">
                             <img className="service-img img-fluid" src={singleServiceDetails?.img} alt="" />
                         </div>
                         <h4 className="my-4">{singleServiceDetails?.title}</h4>
                         <p>{singleServiceDetails?.description}</p>
                         <h5>Price ${singleServiceDetails?.price}</h5>
-                        {/* <NavLink to="/services" className="appoinment-btn text-white rounded-pill border-0">Back To Services</NavLink> */}
+                        <NavLink to="/services" className="appoinment-btn text-white rounded-pill border-0">Back To Services</NavLink>
                     </div>
                 </div>
                 <div className="mt-5 pt-5">
-                    <form onSubmit={handleSubmit(onSubmit)}>
+                    <form className="" onSubmit={handleSubmit(onSubmit)}>
 
                         <input defaultValue={user.displayName} className="form-control border-radius-change w-75 m-auto mb-3"  {...register("name")} />
 
-
                         <input type="email" className="form-control border-radius-change  w-75 m-auto mb-3" defaultValue={user.email} {...register("email", { required: true })} />
 
-                        <input placeholder="Address" type="text" className="form-control border-radius-change  w-75 m-auto mb-3" {...register("address", { required: true })} />
+                        <input defaultValue={singleServiceDetails?.title} type="text" className="form-control border-radius-change  w-75 m-auto mb-3" {...register("product", { required: true })} />
 
-                        <input placeholder="Price" type="number" className="form-control border-radius-change  w-75 m-auto mb-3" {...register("price", { required: true })} />
+                        <input defaultValue={singleServiceDetails?._id} className="form-control border-radius-change  w-75 m-auto mb-3" {...register("productId", { required: true })} />
+
+                        <input defaultValue={singleServiceDetails?.price} placeholder="Price" type="number" className="form-control border-radius-change  w-75 m-auto mb-3" {...register("price", { required: true })} />
+
+                        <input placeholder="Address ex. village,city etc." type="text" className="form-control border-radius-change  w-75 m-auto mb-3" {...register("address", { required: true })} />
+
+                        <input placeholder="Phone" type="tel" className="form-control border-radius-change  w-75 m-auto mb-3" {...register("address", { required: true })} />
 
                         <input type="date" className="form-control border-radius-change  w-75 m-auto mb-3" {...register("date", { required: true })} />
-
 
                         {errors.exampleRequired && <span>This field is required</span>}
 

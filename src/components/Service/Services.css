@@ -40,6 +40,8 @@
     border-radius: 5px;
     transition: 0.5s;
     cursor: pointer;
+    width: 130px;
+    height: 120px;
 }
 .service-img:hover{
     transform: scale(1.1);
