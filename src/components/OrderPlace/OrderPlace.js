@@ -32,10 +32,17 @@ const OrderPlace = () => {
             date: data.date,
             status: 'Pending'
         }
-        console.log(orderDetails);
-        axios.post('http://localhost:5000/order', orderDetails)
-            .then(res => {
-                if (res.data.insertedId) {
+
+        fetch('https://warm-lake-35445.herokuapp.com/order', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(orderDetails)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
                     alert('added successful')
                     reset()
                 }

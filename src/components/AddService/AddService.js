@@ -1,14 +1,20 @@
 import React from 'react';
-import axios from 'axios';
 import { useForm } from "react-hook-form";
 
 const AddService = () => {
     const { register, reset, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data);
-        axios.post('https://warm-lake-35445.herokuapp.com/services', data)
-            .then(res => {
-                if (res.data.insertedId) {
+        fetch('https://warm-lake-35445.herokuapp.com/services', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
                     alert('added successful')
                     reset()
                 }
