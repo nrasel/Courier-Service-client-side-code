@@ -5,32 +5,35 @@ import { NavLink, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 const OrderPlace = () => {
+    const [service, setService] = useState({})
     const { id } = useParams()
     const { user } = useAuth()
-
-    const [serviceDetails, setServiceDetails] = useState([])
-    const [singleServiceDetails, setsingleServiceDetails] = useState({})
+    const { title, price, description, img, _id } = service
 
     useEffect(() => {
-        fetch(`http://localhost:5000/services`)
+        fetch(`http://localhost:5000/services/${id}`)
             .then(res => res.json())
-            .then(data => setServiceDetails(data))
-    }, [])
-
-    console.log(singleServiceDetails);
-
-    useEffect(() => {
-        const foundService = serviceDetails.find(service => service._id === id)
-        setsingleServiceDetails(foundService)
-    }, [serviceDetails, id])
-
-
+            .then(data => setService(data))
+    }, [id])
 
 
     const { register, reset, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data);
-        axios.post('http://localhost:5000/order', data)
+        const orderDetails = {
+            serviceName: title,
+            servicePrice: price,
+            imgUrl: img,
+            id: _id,
+            userName: data.name,
+            userEmail: data.email,
+            address: data.address,
+            phone: data.phone,
+            date: data.date,
+            status: 'Pending'
+        }
+        console.log(orderDetails);
+        axios.post('http://localhost:5000/order', orderDetails)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('added successful')
@@ -45,11 +48,11 @@ const OrderPlace = () => {
                 <div >
                     <div className="service-box m-auto w-75 h-100">
                         <div className="">
-                            <img className="service-img img-fluid" src={singleServiceDetails?.img} alt="" />
+                            <img className="service-img img-fluid" src={img} alt="" />
                         </div>
-                        <h4 className="my-4">{singleServiceDetails?.title}</h4>
-                        <p>{singleServiceDetails?.description}</p>
-                        <h5>Price ${singleServiceDetails?.price}</h5>
+                        <h4 className="my-4">{title}</h4>
+                        <p>{description}</p>
+                        <h5>Price ${price}</h5>
                         <NavLink to="/services" className="appoinment-btn text-white rounded-pill border-0">Back To Services</NavLink>
                     </div>
                 </div>
@@ -60,15 +63,10 @@ const OrderPlace = () => {
 
                         <input type="email" className="form-control border-radius-change  w-75 m-auto mb-3" defaultValue={user.email} {...register("email", { required: true })} />
 
-                        <input defaultValue={singleServiceDetails?.title} type="text" className="form-control border-radius-change  w-75 m-auto mb-3" {...register("product", { required: true })} />
-
-                        <input defaultValue={singleServiceDetails?._id} className="form-control border-radius-change  w-75 m-auto mb-3" {...register("productId", { required: true })} />
-
-                        <input defaultValue={singleServiceDetails?.price} placeholder="Price" type="number" className="form-control border-radius-change  w-75 m-auto mb-3" {...register("price", { required: true })} />
 
                         <input placeholder="Address ex. village,city etc." type="text" className="form-control border-radius-change  w-75 m-auto mb-3" {...register("address", { required: true })} />
 
-                        <input placeholder="Phone" type="tel" className="form-control border-radius-change  w-75 m-auto mb-3" {...register("address", { required: true })} />
+                        <input type="number" placeholder="Phone" className="form-control border-radius-change  w-75 m-auto mb-3" {...register("phone", { required: true })} />
 
                         <input type="date" className="form-control border-radius-change  w-75 m-auto mb-3" {...register("date", { required: true })} />
 

@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import Table from 'react-bootstrap/Table'
+import useAuth from '../../hooks/useAuth';
 
 const MyOrders = () => {
+    const { user } = useAuth()
     const [orders, setorders] = useState([])
     useEffect(() => {
         fetch(`http://localhost:5000/orders`)
             .then(res => res.json())
             .then(data => setorders(data));
     }, [])
+
+
 
     const handleCancel = (id) => {
         const proceed = window.confirm('Are You Sure to Delete')
@@ -33,25 +37,25 @@ const MyOrders = () => {
                 <Table responsive="sm">
                     <thead>
                         <tr>
-                            <th>User Name</th>
-                            <th>User Email</th>
                             <th>ProductId</th>
                             <th>Product Name</th>
                             <th>Price</th>
-                            <th>date</th>
+                            <th>Address</th>
+                            <th>Date</th>
+                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            orders.map(order => (
-                                <tr>
-                                    <td>{order.name}</td>
-                                    <td>{order.email}</td>
-                                    <td>{order.productId}</td>
-                                    <td>{order.product}</td>
-                                    <td>$ {order.price}</td>
+                            orders.filter(order => order.userEmail === user.email).map(order => (
+                                <tr key={order._id}>
+                                    <td>{order._id}</td>
+                                    <td>{order.serviceName}</td>
+                                    <td>$ {order.servicePrice}</td>
+                                    <td>{order.address}</td>
                                     <td>{order.date}</td>
+                                    <td>{order.status}</td>
                                     <td><button onClick={() => handleCancel(order._id)} className="btn btn-danger">Cancel</button></td>
                                 </tr>
                             ))

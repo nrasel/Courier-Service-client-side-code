@@ -20,7 +20,7 @@ const Login = () => {
         <div>
             <div className="mt-5 pt-5 ">
                 <div className="box-shadow w-25 py-5 mx-auto">
-                    <button className="btn btn-danger" onClick={handleGoogleSignIn}>Login With Google</button>
+                    <button className="btn btn-danger" onClick={handleGoogleSignIn}><i class="fab fa-google"></i> Login With Google</button>
                 </div>
             </div>
         </div>
