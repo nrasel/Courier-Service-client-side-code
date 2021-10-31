@@ -6,7 +6,7 @@ const AddService = () => {
     const { register, reset, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data);
-        axios.post('https://warm-lake-35445.herokuapp.com', data)
+        axios.post('https://warm-lake-35445.herokuapp.com/services', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('added successful')
