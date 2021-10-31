@@ -19,7 +19,7 @@ const Login = () => {
     return (
         <div>
             <div className="mt-5 pt-5 ">
-                <div className="box-shadow w-25 py-5 mx-auto">
+                <div className=" w-100 w-lg-25 py-5 mx-auto">
                     <h2 className="mb-3">Please Login</h2>
                     <button className="btn btn-danger" onClick={handleGoogleSignIn}><i className="fab fa-google"></i> Login With Google</button>
                 </div>

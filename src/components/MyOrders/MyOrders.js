@@ -6,10 +6,10 @@ const MyOrders = () => {
     const { user } = useAuth()
     const [orders, setorders] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:5000/orders`)
+        fetch(`https://warm-lake-35445.herokuapp.com/orders`)
             .then(res => res.json())
             .then(data => setorders(data));
-    }, [])
+    }, [orders])
 
 
 

@@ -6,11 +6,11 @@
     height: 90vh;
 }
 .banner-info h1{
-    font-size: 48px;
-    font-weight: 700;
+    font-size: 40px;
+    font-weight: 600;
 }
 .banner-info p{
     color: #2c4964;
     margin: 10px 0 0 0;
-    font-size: 24px;
+    font-size: 20px;
 }

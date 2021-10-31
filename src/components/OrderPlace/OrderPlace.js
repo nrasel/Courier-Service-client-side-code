@@ -11,7 +11,7 @@ const OrderPlace = () => {
     const { title, price, description, img, _id } = service
 
     useEffect(() => {
-        fetch(`http://localhost:5000/services/${id}`)
+        fetch(`https://warm-lake-35445.herokuapp.com/services/${id}`)
             .then(res => res.json())
             .then(data => setService(data))
     }, [id])
