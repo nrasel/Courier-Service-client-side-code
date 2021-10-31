@@ -10,7 +10,7 @@ const Footer = () => {
                     <div className="row g-3 text-center">
                         <div className="col-lg-3 col-sm-12 text-sm-center text-md-start text-lg-start col-md-6">
                             <div className="medilab-info ">
-                                <h3>Courier</h3>
+                                <h3>Delivars</h3>
                                 <p >
                                     <span> A108 Green Road</span> <br />
                                     <span>Dhaka, NY 535022</span> <br />
@@ -42,7 +42,7 @@ const Footer = () => {
                         <div className="col-lg-4 text-sm-center text-md-start text-lg-start col-sm-12 col-md-6">
                             <div className="specialist-info">
                                 <h4>Join Our Newsletters</h4>
-                                <p>An allergist or immunologist focuses on preventing and treating allergic diseases.</p>
+                                <p>Courier’s first book and the ultimate guide to setting off on your own and starting something new.</p>
                                 <form action="" className="specialist-form">
                                     <input className="specialist-email" type="email" name="" id="" />
                                     <input className="subscribe-btn" type="submit" value="Subscribe" />

@@ -32,8 +32,9 @@ const MyOrders = () => {
     }
 
     return (
-        <div className="container">
-            <div className="mt-5 pt-5">
+        <div className="container mt-5 pt-5">
+            <h2>My Orderd Services : {orders.length}</h2>
+            <div className="mt-4">
                 <Table responsive="sm">
                     <thead>
                         <tr>

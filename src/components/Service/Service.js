@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import './Services.css'
 
 const Service = ({ service }) => {
-    const { _id, title, description, img } = service;
+    const { _id, title, description, img, price } = service;
 
     return (
         <div className="service pb-3">
@@ -14,6 +14,7 @@ const Service = ({ service }) => {
                     </div>
                     <h4 className="my-4">{title}</h4>
                     <p>{description}</p>
+                    <h5 className="mb-3">Price : ${price}</h5>
                     <NavLink to={`/orderPlace/${_id}`} className="appoinment-btn text-white rounded-pill border-0">Book Now</NavLink>
                 </div>
             </div>

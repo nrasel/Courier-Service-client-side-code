@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
+
 const ManageOrders = () => {
     const [orders, setorders] = useState([])
     const [statusId, setStatusId] = useState()
@@ -36,7 +37,7 @@ const ManageOrders = () => {
         })
             .then(res => res.json())
             .then(data => {
-                alert('Approved Successful')
+                alert("Approved Successful")
                 setStatusId(id)
             })
     }
@@ -45,6 +46,7 @@ const ManageOrders = () => {
 
     return (
         <div className="container mt-5 pt-5">
+            <h2>Total Ordered Services : {orders.length}</h2>
             <div className="row">
                 <div className="row row-cols-1 row-cols-md-3 g-4">
                     {
@@ -62,9 +64,9 @@ const ManageOrders = () => {
                                         <h5>Price : ${order.servicePrice}</h5>
                                         <button onClick={() => handleCancel(order._id)} className="btn btn-danger me-4">Delete</button>
                                         {order.status === "Pending" ?
-                                            <button button onClick={() => handleStatus(order._id)} className="btn btn-success">Approve</button>
+                                            <button button onClick={() => handleStatus(order._id)} className="btn btn-success">Pending</button>
                                             :
-                                            <button onClick={() => handleStatus(order._id)} className="btn btn-success" disabled>Approve</button>
+                                            <button onClick={() => handleStatus(order._id)} className="btn btn-success">Approve</button>
                                         }
                                     </div>
                                 </div>
