@@ -1,0 +1,68 @@
+.card5{
+    box-shadow: 0px 0 30px rgb(1 41 112 / 10%);
+    padding: 40px 20px;
+    border-radius: 6px;
+    transition: 0.4s;
+    position: relative;
+    overflow: hidden;
+}
+.card5:hover{
+    transform: scale(1.1);
+}
+
+.card5Img img{
+    height: 50%;
+    width: 50%;
+}
+
+
+.free1{
+    color: #07d5c0;
+}
+
+sup{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+.zero{
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.mo{
+    color: #07d5c0;
+    font-size: 18px;
+}
+
+.card5para1{
+    color: #07d5c0;
+    text-decoration: line-through;
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+}
+
+.card5para{
+   
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+}
+
+
+.nineteen{
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.free2{
+    color: #65c600;
+}
+
+.free3{
+    color: #ff901c;
+}
+.free4{
+    color: #ff0071;
+}
+

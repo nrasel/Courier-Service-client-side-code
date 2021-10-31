@@ -11,8 +11,8 @@ const Agents = () => {
     return (
         <div>
             <div className="container">
-                <div class="section-title mt-3">
-                    <h1 class="position-relative">Our Agent Location</h1>
+                <div className="section-title mt-3">
+                    <h1 className="position-relative">Our Agent Location</h1>
                     <p> Agent locations are places where you can transfer and receive money or pay a bill in person with Western Union</p>
                 </div>
 

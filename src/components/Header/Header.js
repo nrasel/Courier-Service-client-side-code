@@ -11,7 +11,7 @@ const Header = () => {
             <section>
                 <nav className="navbar navbar-expand-lg fixed-top navbar-light navbar-background">
                     <div className="container">
-                        <h1 className="logo"><NavLink className="navbar-brand" to="/home">Courier</NavLink></h1>
+                        <h1 className="logo"><NavLink className="navbar-brand" to="/home">Delivars Courier </NavLink></h1>
 
                         <button className="btn d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i className="fas fa-bars"></i></button>
 

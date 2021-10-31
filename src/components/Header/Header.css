@@ -7,13 +7,13 @@
     color: #2c4964 !important;
 }
 .navbar{
-    border-bottom: 2px solid rgb(226, 233, 226);
+    border-bottom: 1px solid #ee8b8a;
 }
 .navbar-background{
     background-color: #ffffff;
 }
 .log-out{
-    background: #1977cc;
+    background: #e83330;
     color: white;
     border: none;
     padding: 6px 10px;

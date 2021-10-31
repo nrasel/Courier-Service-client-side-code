@@ -16,7 +16,7 @@ const Footer = () => {
                                     <span>Dhaka, NY 535022</span> <br />
                                     <span>Bangladesh</span><br />
                                     <span><strong>Phone: </strong>+1 5589 55488 65</span><br />
-                                    <span><strong>Email:</strong> rnaimur313@gmail.com</span>
+                                    <span><strong>Email:</strong> nrasel452@gmail.com</span>
                                 </p>
                             </div>
                         </div>
@@ -24,8 +24,8 @@ const Footer = () => {
                             <div className="useful-link d-flex flex-column">
                                 <h4>Useful Links</h4>
                                 <Link to="/home"><i className="fas fa-chevron-right"></i> Home</Link>
-                                <Link to="/departments"><i className="fas fa-chevron-right"></i> Services</Link>
-                                <Link to="/doctors"><i className="fas fa-chevron-right"></i> My Orders</Link>
+                                <Link to="/home"><i className="fas fa-chevron-right"></i> Services</Link>
+                                <Link to="/home"><i className="fas fa-chevron-right"></i> My Orders</Link>
                                 <Link to="/home"><i className="fas fa-chevron-right"></i> About Us</Link>
 
                             </div>
@@ -59,7 +59,7 @@ const Footer = () => {
                         <div className=" col-lg-6 col-md-8 credit-center">
                             <div className="d-flex flex-column">
                                 <div className="copyright ">
-                                    © Copyright <strong>Medilab</strong>. All Rights Reserved
+                                    © Copyright <strong>Delivars</strong>. All Rights Reserved
                                 </div>
                                 <div className="credits mt-2">
                                     Designed by <Link to="/home">Naimur Rahman</Link>

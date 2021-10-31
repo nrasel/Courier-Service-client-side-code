@@ -6,13 +6,15 @@ const Services = () => {
     useEffect(() => {
         fetch(`http://localhost:5000/services`)
             .then(res => res.json())
-            .then(data => setServices(data));
+            .then(data => {
+                setServices(data)
+            });
     }, [])
     return (
         <div id="services">
             <div className="container mt-5 pt-5">
-                <div class="section-title mt-3">
-                    <h1 class="position-relative">Our services</h1>
+                <div className="section-title mt-3">
+                    <h1 className="position-relative">Our services</h1>
                 </div>
 
                 <div className="row">

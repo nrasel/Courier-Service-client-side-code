@@ -23,18 +23,16 @@
 }
 .service-box{
     text-align: center;
-    border: 1px solid #d5e1ed;
+    border: 1px solid #f6c6c5;
     padding: 20px 20px;
     transition: all ease-in-out 0.3s;
     position: relative;
     border-radius: 5px;
 }
-.service-box:hover{
-    background: #1977cc;
-    color: white;
-}
+
+
 .service-box:hover .appoinment-btn{
-    background-color: #5e90bd;
+    background-color: #a75b59;
 }
 .service-img{
     border-radius: 5px;
@@ -48,12 +46,8 @@
 }
 
 .appoinment-btn{
-    background-color: #1977cc;
+    background-color: #e83330;
     transition: 0.4s;
     padding: 5px 20px;
     text-decoration: none;
-}
-.appoinment-btn:hover{
-    background-color: white !important;
-    color: #1977cc !important;
 }

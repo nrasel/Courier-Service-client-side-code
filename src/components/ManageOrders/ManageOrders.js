@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 
 const ManageOrders = () => {
     const [orders, setorders] = useState([])
+    const [statusId, setStatusId] = useState()
     useEffect(() => {
         fetch(`http://localhost:5000/orders`)
             .then(res => res.json())
             .then(data => setorders(data));
-    }, [])
+    }, [statusId])
 
 
 
@@ -28,6 +29,18 @@ const ManageOrders = () => {
         }
     }
 
+    const handleStatus = (id) => {
+        const url = `http://localhost:5000/orders/${id}`
+        fetch(url, {
+            method: 'PUT'
+        })
+            .then(res => res.json())
+            .then(data => {
+                alert('Approved Successful')
+                setStatusId(id)
+            })
+    }
+
 
 
     return (
@@ -35,7 +48,7 @@ const ManageOrders = () => {
             <div className="row">
                 <div className="row row-cols-1 row-cols-md-3 g-4">
                     {
-                        orders.map(order => <div>
+                        orders.map(order => <div key={order._id}>
                             <div className="service pb-3">
                                 <div className="h-100">
                                     <div className="service-box h-100">
@@ -47,8 +60,12 @@ const ManageOrders = () => {
                                         <p>Phone : {order.phone}</p>
                                         <p>{order.userEmail}</p>
                                         <h5>Price : ${order.servicePrice}</h5>
-                                        <button onClick={() => handleCancel(order._id)} className="btn btn-success me-4">Delete</button>
-                                        <button className="btn btn-danger">Pending</button>
+                                        <button onClick={() => handleCancel(order._id)} className="btn btn-danger me-4">Delete</button>
+                                        {order.status === "Pending" ?
+                                            <button button onClick={() => handleStatus(order._id)} className="btn btn-success">Approve</button>
+                                            :
+                                            <button onClick={() => handleStatus(order._id)} className="btn btn-success" disabled>Approve</button>
+                                        }
                                     </div>
                                 </div>
                             </div>
@@ -56,7 +73,7 @@ const ManageOrders = () => {
                     }
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 
